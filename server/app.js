@@ -10,6 +10,7 @@ const app = express();
 const PORT = 5000;
 app.use(cors()); 
 
+
 // 파일 저장을 위한 설정
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
