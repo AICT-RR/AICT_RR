@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './SettingSidebar.css'
 
 export default function SettingSidebar() {
   return (
@@ -8,10 +9,10 @@ export default function SettingSidebar() {
       <nav>
         <ul>
             <li>
-                <Link to="display">display</Link>
+                <Link to="slide">slide</Link>
             </li>
             <li>
-                <Link to="slide">slide</Link>
+                <Link to="display">display</Link>
             </li>
         </ul>
       </nav>
