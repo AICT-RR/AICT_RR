@@ -9,10 +9,10 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={ <SlideScreen /> } />
-        <Route path="/settings" element={ <Settings /> }>
-          <Route path="display" element={ <DisplaySetting /> } />
-          <Route path="slide" element={ <SlideSetting /> } />
+        <Route path='/' element={<SlideScreen />} />
+        <Route path='/settings' element={<Settings />}>
+          <Route path='display' element={<DisplaySetting />} />
+          <Route path='slide' element={<SlideSetting />} />
         </Route>
       </Routes>
     </div>
