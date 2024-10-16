@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import SlideScreen from './pages/slidePages/SlideScreen';
 import Settings from './pages/settingPages/Settings';
 import DisplaySetting from './pages/settingPages/DisplaySetting';
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SlideScreen />} />
         <Route path='/settings' element={<Settings />}>
-          <Route index element={<SlideSetting />} />
+        <Route index element={<Navigate to="slide" replace />} />
           <Route path='slide' element={<SlideSetting />} />
           <Route path='display' element={<DisplaySetting />} />
         </Route>
