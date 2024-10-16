@@ -1,8 +1,8 @@
 import React from 'react';
-import Slider from '../components/Slider';
-import images from '../images.json';
+import Slider from '../../components/Slider';
+import images from '../../images.json';
 
-import config from '../config.json';
+import config from '../../config.json';
 
 import './SlideScreen.css';
 

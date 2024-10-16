@@ -1,9 +1,9 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import SlideScreen from './pages/SlideScreen';
-import Settings from './pages/Settings';
-import DisplaySetting from './pages/DisplaySetting';
-import SlideSetting from './pages/SlideSetting';
+import SlideScreen from './pages/slidePages/SlideScreen';
+import Settings from './pages/settingPages/Settings';
+import DisplaySetting from './pages/settingPages/DisplaySetting';
+import SlideSetting from './pages/settingPages/SlideSetting';
 
 function App() {
   return (
