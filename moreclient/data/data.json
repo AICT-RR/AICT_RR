@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "uploads/",
+    "filename": "424ee139d95533c1.png",
+    "path": "uploads/424ee139d95533c1.png",
+    "size": 0,
+    "url": "http://localhost:3000/uploads/424ee139d95533c1.png"
+  },
+  {
+    "id": 2,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "../moreclient/public/uploads/",
+    "filename": "6ad8f9d65c7a544c.png",
+    "path": "../moreclient/public/uploads/6ad8f9d65c7a544c.png",
+    "size": 240565,
+    "url": "http://localhost:3000/../moreclient/public/uploads/6ad8f9d65c7a544c.png"
+  },
+  {
+    "id": 3,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "../moreclient/public/uploads/",
+    "filename": "87431d82b6d56c58.png",
+    "path": "../moreclient/public/uploads/87431d82b6d56c58.png",
+    "size": 240565,
+    "url": "http://localhost:3000/../moreclient/public/uploads/87431d82b6d56c58.png"
+  },
+  {
+    "id": 4,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "../moreclient/public/uploads/",
+    "filename": "10c1c4073c4433b6.png",
+    "path": "../moreclient/public/uploads/10c1c4073c4433b6.png",
+    "size": 445738,
+    "url": "http://localhost:3000/../moreclient/public/uploads/10c1c4073c4433b6.png"
+  },
+  {
+    "id": 5,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "../moreclient/public/uploads/",
+    "filename": "bfb0122006eab12d.png",
+    "path": "../moreclient/public/uploads/bfb0122006eab12d.png",
+    "size": 455361,
+    "url": "http://localhost:3000/../moreclient/public/uploads/bfb0122006eab12d.png"
+  }
+]
