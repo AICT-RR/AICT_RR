@@ -11,8 +11,9 @@ function App() {
       <Routes>
         <Route path='/' element={<SlideScreen />} />
         <Route path='/settings' element={<Settings />}>
-          <Route path='display' element={<DisplaySetting />} />
+          <Route index element={<SlideSetting />} />
           <Route path='slide' element={<SlideSetting />} />
+          <Route path='display' element={<DisplaySetting />} />
         </Route>
       </Routes>
     </div>
