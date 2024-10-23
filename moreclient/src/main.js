@@ -27,16 +27,17 @@ function Main() {
     fetchSlides(); 
   }, []); 
 
-  const imageUrl = "http://localhost:5000/uploads/45a218ab7d823e9c.png";
-
   return (
     <div>
-      <img src ={imageUrl}/>
         {slides.map(img => (
             <div key={img.id}> {/* 각 img에 대해 고유한 key를 추가 */}
                 <h2>{img.id}</h2>
                 <p>{img.filename}</p>
-                <img src={img.url} alt={`Slide ${img.id}`} /> {/* alt 속성 추가 */}
+                <img
+    style={{
+      width: '300px',  // 이미지가 슬라이드의 너비를 초과하지 않도록 설정
+      Height: '300px%'  // 이미지가 슬라이드의 높이를 초과하지 않도록 설정
+    }} /* 이미지가 슬라이드의 높이를 초과하지 않도록 설정 */ src={img.url} alt={`Slide ${img.id}`} /> {/* alt 속성 추가 */}
             </div>
         ))}
     </div>

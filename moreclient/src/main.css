@@ -30,3 +30,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container {
+  max-height: 400px; /* 원하는 최대 높이 설정 */
+  overflow-y: auto; /* 수직 스크롤 가능 */
+  border: 1px solid #ccc; /* 선택사항: 경계선 추가 */
+  padding: 10px; /* 선택사항: 패딩 추가 */
+}
