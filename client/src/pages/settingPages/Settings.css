@@ -1,0 +1,27 @@
+.settings-container {
+  display: flex;
+  flex-direction: row; /* 기본적으로 좌우 배치 */
+  height: 100vh;
+}
+
+.settings-sidebar {
+  width: 260px; /* 사이드바의 너비 */
+  background-color: #fff;
+  border-right: 2px solid #3db8ff;
+}
+
+.settings-content {
+  flex-grow: 1; /* 남은 공간을 차지 */
+  background-color: #ecf4ff;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    flex-direction: column; /* 모바일에서는 위아래 배치 */
+  }
+  
+  .settings-sidebar {
+    width: 100%; /* 모바일에서는 전체 너비 차지 */
+    border-bottom: 2px solid #3db8ff;
+  }
+}

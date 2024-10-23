@@ -1,12 +1,12 @@
 import React from 'react'
 import Uploader from '../../components/Uploader';
-import './SlideSetting.css'
+import './SubSetting.css'
 
 export default function SlideSetting() {
   return (
-    <div className='slideSetting'>
-      <h1>SlideSetting</h1>
-      <Uploader />
+    <div className='settingArea'>
+      <h1 className='settingTitle'>SlideSetting</h1>
+      {/* <Uploader /> */}
     </div>
   )
 }
