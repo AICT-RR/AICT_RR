@@ -18,7 +18,7 @@ export const Slider = ({ slides = [] }) => { // slides의 기본값을 빈 배�
     >
       {slides.length > 0 ? ( // 슬라이드가 있을 때만 렌더링
         slides.map((slide) => (
-          <SwiperSlide key={slide.id}> {/* 고유한 key 값 사용 */}
+          <SwiperSlide key={slide.id} className='slide'> {/* 고유한 key 값 사용 */}
             <img src={slide.url} alt={slide.title} />
           </SwiperSlide>
         ))

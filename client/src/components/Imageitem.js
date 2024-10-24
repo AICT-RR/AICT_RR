@@ -15,7 +15,7 @@ function ImageItem({ fileName, onDelete }) {
         borderRadius: '5px',
         position: 'relative',
     };
- 
+
 
     return (
         <div ref={setNodeRef} style={style} {...attributes}>
