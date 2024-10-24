@@ -108,6 +108,27 @@ app.post('/upload', upload.single('file'), (req, res) => {
     }
 });
 
+app.use(express.json());  // 이 줄을 추가하세요
+
+app.post('/api/saveCount', (req, res) => {
+    const { count } = req.body;  // 요청 본문에서 count 값을 가져옴
+    const dataFilePath = path.join(__dirname, '..', 'client', 'public', 'config.json');
+    
+    try {
+        const configData = fs.readFileSync(dataFilePath, 'utf8');
+        const config = JSON.parse(configData);
+        
+        config.delaySec = count;
+
+        fs.writeFileSync(dataFilePath, JSON.stringify(config, null, 4), 'utf8');
+        console.log(`Updated delaySec to: ${count}`);
+        res.send({ message: 'Delay time updated successfully!' });
+    } catch (err) {
+        console.error('Error updating config file:', err);
+        res.status(500).send({ message: 'Failed to update delay time.' });
+    }
+});
+
 app.get('/files', (req, res) => {
     const dirPath = path.join(__dirname, '../client/public/uploads/');
     const dataFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
