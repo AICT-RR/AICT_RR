@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DndContext } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
-import ImageItem from './ImageItem';
+import ImageItem from './Imageitem';
 
 function FileUpload() {
     const [file, setFile] = useState(null);
@@ -17,7 +17,7 @@ function FileUpload() {
     // 서버에서 파일 목록을 불러와 파일 리스트 상태 업데이트
     const fetchFiles = async () => {
         try {
-            const response = await fetch('/files');
+            const response = await fetch('http://localhost:5000/files');
             const files = await response.json();
             setFileList(files);
         } catch (error) {
@@ -52,7 +52,7 @@ function FileUpload() {
         formData.append('file', file);
 
         try {
-            const response = await fetch('/upload', {
+            const response = await fetch('http://localhost:5000/uploads', {
                 method: 'POST',
                 body: formData,
             });
@@ -75,7 +75,7 @@ function FileUpload() {
     const handleDelete = async (fileName) => {
         if (window.confirm(`"${fileName}" 파일을 삭제하시겠습니까?`)) {
             try {
-                const response = await fetch(`/delete/${fileName}`, {
+                const response = await fetch(`http://localhost:5000/delete/${fileName}`, {
                     method: 'DELETE',
                 });
                 if (response.ok) {
@@ -104,7 +104,7 @@ function FileUpload() {
         console.log("정렬된 파일 목록:", newFileList);
 
         try {
-            const response = await fetch('/update-file-order', {
+            const response = await fetch('http://localhost:5000/update-file-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

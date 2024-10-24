@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": 1,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "/root/RR_/moreclient/public/uploads",
+    "filename": "637ee7c1247a5071.png",
+    "path": "/root/RR_/moreclient/public/uploads/637ee7c1247a5071.png",
+    "size": 455361,
+    "url": "http://localhost:3000/uploads/637ee7c1247a5071.png"
+  },
+  {
+    "id": 2,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "/root/RR_/moreclient/public/uploads",
+    "filename": "b829ea82af7c66de.png",
+    "path": "/root/RR_/moreclient/public/uploads/b829ea82af7c66de.png",
+    "size": 445738,
+    "url": "http://localhost:3000/uploads/b829ea82af7c66de.png"
+  }
+]
