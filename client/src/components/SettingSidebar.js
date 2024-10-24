@@ -9,20 +9,23 @@ export default function SettingSidebar() {
       <nav>
         <ul>
           <li>
-            <NavLink to='slide' className='nav-link' activeClassName='active'>
-              <div className='nav-item'>
-                <div className='nav-deco'></div>
-                <div className='nav-text'>슬라이드 관리</div>
-              </div>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='display' className='nav-link' activeClassName='active'>
-              <div className='nav-item'>
-                <div className='nav-deco'></div>
-                <div className='nav-text'>화면 관리</div>
-              </div>
-            </NavLink>
+          <NavLink to='slide' 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            <div className='nav-item'>
+              <div className='nav-deco'></div>
+              <div className='nav-text'>슬라이드 관리</div>
+            </div>
+          </NavLink>
+
+          <NavLink to='display' 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
+            <div className='nav-item'>
+              <div className='nav-deco'></div>
+              <div className='nav-text'>화면 관리</div>
+            </div>
+          </NavLink>
           </li>
         </ul>
       </nav>

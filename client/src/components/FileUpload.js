@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { DndContext } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
-import ImageItem from './ImageItem';
+import ImageItem from './Imageitem'; // Imageitem의 대문자를 수정
 
 function FileUpload() {
     const [file, setFile] = useState(null);
-    const [previewUrl, setPreviewUrl] = useState(null);
     const [fileList, setFileList] = useState([]);
     const [isDragging, setIsDragging] = useState(false); // 드래그 상태 관리
 
@@ -17,7 +16,7 @@ function FileUpload() {
     // 서버에서 파일 목록을 불러와 파일 리스트 상태 업데이트
     const fetchFiles = async () => {
         try {
-            const response = await fetch('/files');
+            const response = await fetch('http://localhost:5000/files');
             const files = await response.json();
             setFileList(files);
         } catch (error) {
@@ -25,41 +24,33 @@ function FileUpload() {
             alert('파일 목록을 불러오는 데 오류가 발생했습니다.');
         }
     };
-    
-    // 파일 선택 시 미리보기 설정
+
+    // 파일 선택 시 처리
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
 
         if (selectedFile && selectedFile.type.startsWith('image/')) {
-            const url = URL.createObjectURL(selectedFile);
-            setPreviewUrl(url);
+            handleSubmit(selectedFile); // 파일이 유효할 경우 자동으로 제출
         } else {
-            setPreviewUrl(null);
+            setFile(null); // 유효하지 않은 파일일 경우 초기화
+            alert('이미지 파일을 선택해주세요.');
         }
     };
 
     // 파일 업로드 처리
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!file) {
-            console.error('No file selected');
-            alert('파일을 선택해주세요.');
-            return;
-        }
-
+    const handleSubmit = async (selectedFile) => {
         const formData = new FormData();
-        formData.append('file', file);
+        formData.append('file', selectedFile); // 선택된 파일 추가
 
         try {
-            const response = await fetch('/upload', {
+            const response = await fetch('http://localhost:5000/upload', {
                 method: 'POST',
                 body: formData,
             });
 
             if (response.ok) {
                 setFile(null); // 선택된 파일 초기화
-                setPreviewUrl(null); // 미리보기 URL 초기화
                 fetchFiles(); // 파일 목록 다시 불러오기 (업로드 후)
             } else {
                 console.error('File upload failed');
@@ -75,7 +66,7 @@ function FileUpload() {
     const handleDelete = async (fileName) => {
         if (window.confirm(`"${fileName}" 파일을 삭제하시겠습니까?`)) {
             try {
-                const response = await fetch(`/delete/${fileName}`, {
+                const response = await fetch(`http://localhost:5000/delete/${fileName}`, {
                     method: 'DELETE',
                 });
                 if (response.ok) {
@@ -104,7 +95,7 @@ function FileUpload() {
         console.log("정렬된 파일 목록:", newFileList);
 
         try {
-            const response = await fetch('/update-file-order', {
+            const response = await fetch('http://localhost:5000/update-file-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -132,22 +123,15 @@ function FileUpload() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <form encType="multipart/form-data">
                 <input 
                     type="file" 
                     name="file" 
                     onChange={handleFileChange} 
                     required 
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" style={{ display: 'none' }}>Submit</button> {/* 버튼 숨김 */}
             </form>
-
-            {previewUrl && (
-                <div>
-                    <h3>Image Preview:</h3>
-                    <img src={previewUrl} alt="Preview" style={{ maxWidth: '300px', maxHeight: '300px' }} />
-                </div>
-            )}
 
             <h3>Uploaded Images:</h3>
 

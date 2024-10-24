@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -9,17 +8,14 @@ const crypto = require('crypto');
 
 const app = express();
 const PORT = 5000;
-app.use(cors());    // BEFORE
+const cors = require('cors');
+app.use(cors());    
+
 app.use('/uploads', express.static(path.join(__dirname, '..', 'client', 'public', 'uploads')));
-
-
-
 
 // 파일 저장을 위한 설정
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        // 파일을 저장할 경로
-        // cb(null, 'uploads/');    // BEFORE
         const uploadPath = path.join(__dirname, '..', 'client', 'public', 'uploads');
         cb(null, uploadPath);
 
@@ -27,7 +23,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         const uploadDir = 'uploads/';
 
-        fs.readdir(uploadDir, (err, files) => {
+        fs.readdir(path.join(__dirname, '..', 'client', 'public', 'uploads'), (err, files) => {
             if (err) {
                 console.error('Error reading upload directory:', err);
                 return cb(err);
@@ -50,12 +46,10 @@ app.post('/upload', upload.single('file'), (req, res) => {
     if (req.file) {
         const fileData = req.file;
         const jsonFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
-        //   const jsonFilePath = path.join(__dirname, '..', 'server', 'data', 'data.json');    // BEFORE
 
         const imageUrl = `http://localhost:3000/uploads/${fileData.filename}`;
-        //   const imageUrl = `http://localhost:5000/${fileData.path}`;     // BEFORE
         const fileInfo = {
-            id: null, // 나중에 ID를 설정할 것입니다.
+            id: null,
             fieldname: fileData.fieldname,
             mimetype: fileData.mimetype,
             destination: fileData.destination,
@@ -114,44 +108,38 @@ app.post('/upload', upload.single('file'), (req, res) => {
     }
 });
 
-// uploads 폴더의 파일 목록을 반환하는 라우트
 app.get('/files', (req, res) => {
     const dirPath = path.join(__dirname, '../client/public/uploads/');
     const dataFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
+    console.log("JSON 파일 경로:", dataFilePath);
+    console.log("uploads 폴더 경로:", dirPath);
 
-    // fs.readdir('uploads', (err, files) => {  // BEFORE
-    // JSON 파일을 먼저 읽어서 filename을 가져옴
     fs.readFile(dataFilePath, 'utf8', (err, data) => {
         if (err) {
-            // return res.status(500).send('Error reading files'); // BEFORE
             console.error('Error reading JSON file:', err);
             return res.status(500).json({ error: 'Error reading JSON file' });
         }
 
         let fileOrder;
         try {
-            fileOrder = JSON.parse(data).map(fileInfo => fileInfo.filename); // JSON에서 filename 순서대로 가져옴
+            fileOrder = JSON.parse(data).map(fileInfo => fileInfo.filename);
         } catch (parseErr) {
             console.error('Error parsing JSON file:', parseErr);
             return res.status(500).json({ error: 'Error parsing JSON file' });
         }
 
-        // uploads 폴더에서 파일 목록 읽기
         fs.readdir(dirPath, (err, files) => {
             if (err) {
                 return res.status(500).send('Error reading files');
             }
-            // res.json(files);    // BEFORE
-            // JSON에서 얻은 순서대로 파일을 정렬
             const orderedFiles = fileOrder.filter(filename => files.includes(filename));
-
-            res.json(orderedFiles); // 정렬된 파일 목록을 클라이언트에 반환
+            res.set('Cache-Control', 'no-store'); // 캐시 방지
+            res.json(orderedFiles);
         });
     });
 });
 
-// 정적 파일 제공 설정
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));    // BEFORE
+
 app.use(bodyParser.json());
 app.delete('/delete/:fileName', (req, res) => {
     const fileName = req.params.fileName;
@@ -159,7 +147,6 @@ app.delete('/delete/:fileName', (req, res) => {
     const filePath = path.join(__dirname, '..', 'client', 'public', 'uploads', fileName);
 
     // JSON 파일 경로 설정
-    // const jsonFilePath = path.join(__dirname, '..', 'server', 'data', 'data.json');  // BEFORE
     const jsonFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
 
     // 파일 삭제
