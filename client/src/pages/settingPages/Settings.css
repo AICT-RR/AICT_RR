@@ -25,3 +25,13 @@
     border-bottom: 2px solid #3db8ff;
   }
 }
+
+button.selected {
+  background-color: blue;
+  color: white;
+}
+
+button.unselected {
+  background-color: white;
+  color: blue;
+}

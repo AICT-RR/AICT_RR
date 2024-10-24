@@ -111,9 +111,6 @@ app.post('/upload', upload.single('file'), (req, res) => {
 app.get('/files', (req, res) => {
     const dirPath = path.join(__dirname, '../client/public/uploads/');
     const dataFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
-    console.log("JSON 파일 경로:", dataFilePath);
-    console.log("uploads 폴더 경로:", dirPath);
-
     fs.readFile(dataFilePath, 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading JSON file:', err);
@@ -156,7 +153,6 @@ app.delete('/delete/:fileName', (req, res) => {
             return res.status(500).json({ message: 'Error deleting file' });
         }
 
-        // JSON 파일에서 파일 정보 삭제
         fs.readFile(jsonFilePath, 'utf8', (err, data) => {
             if (err) {
                 console.error('Error reading JSON file:', err);
@@ -170,11 +166,8 @@ app.delete('/delete/:fileName', (req, res) => {
                 console.error('Error parsing JSON file:', parseErr);
                 return res.status(500).json({ message: 'Error parsing JSON file' });
             }
-
-            // 파일 정보를 배열에서 삭제
             fileInfoArray = fileInfoArray.filter(fileInfo => fileInfo.filename !== fileName);
 
-            // ID 재정렬
             fileInfoArray.forEach((fileInfo, index) => {
                 fileInfo.id = index + 1; // ID를 1부터 시작하여 재설정
             });
@@ -199,65 +192,19 @@ app.use(express.json());
 const dataFilePath = path.join(__dirname, '..', 'client', 'data/data.json');
 
 app.post("/getImage", async (req, res) => {
-    // // BEFORE
-    // app.post("/getImages", async (req, res) => {
-    //     const { filename } = req.file;
-    //     const { subject } = req.body;
-    //     const filePath = `http://localhostt:${PORT}/${filename}`;
-    //     const data = { subject, filePath };
-    //     board.push(data);
-    //     console.log(board);
-    //     res.send('OK');
-
     try {
         // JSON 파일 읽기
         const data = JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
         res.json(data);
-        // // BEFORE
-        // let imageFiles = [];
-
-        // // JSON 데이터 배열을 순회하면서 파일 찾기
-        // for (let item of data) {
-        //     if (fs.existsSync(item.filename)) {
-        //     imageFiles.push(item.filename);
-        //     }
-        // } console(imageFiles);
-
-        // if (imageFiles.length > 0) {
-        //     res.json({ images: imageFiles });
-        // } else {
-        //     res.status(404).send('No image files found.');
-        // }
     } catch (error) {
         console.error("Error reading JSON file:", error);
-        // res.status(500).send("An error occurred.");  // BEFORE
         res.status(500).send("An error occurred while reading the JSON file.");
     }
 });
 
-// // BEFORE
-// app.get('/slides', (req, res) => {
-//     const jsonFilePath = path.join(__dirname, 'data', 'data.json'); // JSON 파일 경로 설정
-
-//     fs.readFile(jsonFilePath, 'utf8', (err, data) => {
-//         if (err) {
-//             console.error('파일을 읽는 중 오류 발생:', err);
-//             return res.status(500).send('파일 읽기 실패');
-//         }
-//         try {
-//             const slidesData = JSON.parse(data); // JSON 파일을 파싱
-//             res.json(slidesData); // 클라이언트에 JSON 데이터 반환
-//         } catch (parseErr) {
-//             console.error('파일을 파싱하는 중 오류 발생:', parseErr);
-//             return res.status(500).send('파일 파싱 실패');
-//         }
-//     });
-// });
 
 app.post('/update-file-order', (req, res) => {
-    const newFileOrder = req.body; // 클라이언트에서 보낸 정렬된 파일 목록
-
-    // const jsonFilePath = path.join(__dirname, 'data', 'data.json');  // BEFORE
+    const newFileOrder = req.body; 
     const jsonFilePath = path.join(__dirname, '..', 'client', 'data/data.json');
 
     fs.readFile(jsonFilePath, 'utf8', (err, data) => {
@@ -266,7 +213,6 @@ app.post('/update-file-order', (req, res) => {
             return res.status(500).json({ error: '서버 오류' });
         }
 
-        // JSON 데이터 파싱
         let jsonData;
         try {
             jsonData = JSON.parse(data);
@@ -275,7 +221,6 @@ app.post('/update-file-order', (req, res) => {
             return res.status(500).json({ error: 'JSON 파싱 오류' });
         }
 
-        // files 속성이 정의되어 있는지 확인
         if (!Array.isArray(jsonData)) {
             console.error('파일 목록이 정의되지 않았습니다.');
             return res.status(500).json({ error: '파일 목록이 정의되지 않았습니다.' });
