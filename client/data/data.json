@@ -2,21 +2,31 @@
   {
     "id": 1,
     "fieldname": "file",
-    "mimetype": "image/jpeg",
-    "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
-    "filename": "d5325a84af5a29b3.jpg",
-    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\d5325a84af5a29b3.jpg",
-    "size": 3036226,
-    "url": "http://localhost:3000/uploads/d5325a84af5a29b3.jpg"
+    "mimetype": "image/png",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "25c2d3e409d9407c.png",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\25c2d3e409d9407c.png",
+    "size": 1825081,
+    "url": "http://localhost:3000/uploads/25c2d3e409d9407c.png"
   },
   {
     "id": 2,
     "fieldname": "file",
-    "mimetype": "image/jpeg",
-    "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
-    "filename": "3adf37a0d2daf2e6.jpg",
-    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\3adf37a0d2daf2e6.jpg",
-    "size": 504481,
-    "url": "http://localhost:3000/uploads/3adf37a0d2daf2e6.jpg"
+    "mimetype": "image/png",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "86d7a126bf418087.png",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\86d7a126bf418087.png",
+    "size": 1187281,
+    "url": "http://localhost:3000/uploads/86d7a126bf418087.png"
+  },
+  {
+    "id": 3,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "8f9a5daca56edb08.png",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\8f9a5daca56edb08.png",
+    "size": 1748385,
+    "url": "http://localhost:3000/uploads/8f9a5daca56edb08.png"
   }
 ]
