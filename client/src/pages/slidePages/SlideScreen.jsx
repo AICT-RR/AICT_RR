@@ -53,7 +53,7 @@ export default function SlideScreen() {
 
   return (
     <>
-      <Slider slides={slides} mode={slideMode} delay={delaySec} /> {/* slides를 Slider에 전달 */}
+      <Slider className="slide" slides={slides} mode={slideMode} delay={delaySec} /> {/* slides를 Slider에 전달 */}
     </>
   );
 }
