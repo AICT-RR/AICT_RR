@@ -91,7 +91,6 @@ function FileUpload() {
 
         const newFileList = arrayMove(fileList, oldIndex, newIndex);
         setFileList(newFileList); // 파일 리스트 상태 업데이트
-
         console.log("정렬된 파일 목록:", newFileList);
 
         try {

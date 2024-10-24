@@ -2,10 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-export const Slider = ({ slides }) => {
+export const Slider = ({ slides = [] }) => { // slides의 기본값을 빈 배열로 설정
   return (
     <Swiper
-      modules={[ Autoplay, EffectFade ]}
+      modules={[Autoplay, EffectFade]}
       spaceBetween={0}
       slidesPerView={1}
       effect={"fade"}
@@ -16,12 +16,19 @@ export const Slider = ({ slides }) => {
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      {slides.map((slide) => (
-        <SwiperSlide key={slide.image} className="slide">
-          <img src={slide.image} alt={slide.title} />
+      {slides.length > 0 ? ( // 슬라이드가 있을 때만 렌더링
+        slides.map((slide) => (
+          <SwiperSlide key={slide.id}> {/* 고유한 key 값 사용 */}
+            <img src={slide.url} alt={slide.title} />
+          </SwiperSlide>
+        ))
+      ) : (
+        <SwiperSlide>
+          <div>슬라이드가 없습니다.</div> {/* 슬라이드가 없을 때 메시지 표시 */}
         </SwiperSlide>
-      ))}
+      )}
     </Swiper>
   );
 };
+
 export default Slider;
