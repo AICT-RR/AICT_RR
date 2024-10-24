@@ -24,6 +24,7 @@ width: 6px;
 }
 
 .nav-text {
+  padding-left: 32px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -35,7 +36,7 @@ width: 6px;
   text-decoration: none;
   padding: 6px;
   font-size: 1.4rem;
-  text-align: center;
+  text-align: left;
 }
 
 

@@ -58,5 +58,15 @@
     "path": "/root/RR_/moreclient/public/uploads/b829ea82af7c66de.png",
     "size": 445738,
     "url": "http://localhost:3000/uploads/b829ea82af7c66de.png"
+  },
+  {
+    "id": 7,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
+    "filename": "761bdf53c8ab0f82.png",
+    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\761bdf53c8ab0f82.png",
+    "size": 35182,
+    "url": "http://localhost:3000/uploads/761bdf53c8ab0f82.png"
   }
 ]
