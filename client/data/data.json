@@ -18,5 +18,25 @@
     "path": "/root/RR_/moreclient/public/uploads/b829ea82af7c66de.png",
     "size": 445738,
     "url": "http://localhost:3000/uploads/b829ea82af7c66de.png"
+  },
+  {
+    "id": 3,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "982cf17820a10134.png",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\982cf17820a10134.png",
+    "size": 1825081,
+    "url": "http://localhost:3000/uploads/982cf17820a10134.png"
+  },
+  {
+    "id": 4,
+    "fieldname": "file",
+    "mimetype": "image/png",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "eda891ebbbcb3a38.png",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\eda891ebbbcb3a38.png",
+    "size": 1187281,
+    "url": "http://localhost:3000/uploads/eda891ebbbcb3a38.png"
   }
 ]

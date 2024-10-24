@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         const uploadDir = 'uploads/';
 
-        fs.readdir(uploadDir, (err, files) => {
+        fs.readdir(path.join(__dirname, '..', 'client', 'public', 'uploads'), (err, files) => {
             if (err) {
                 console.error('Error reading upload directory:', err);
                 return cb(err);
