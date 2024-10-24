@@ -24,7 +24,8 @@ export const Slider = ({ slides = [] }) => { // slides의 기본값을 빈 배�
         ))
       ) : (
         <SwiperSlide>
-          <div>슬라이드가 없습니다.</div> {/* 슬라이드가 없을 때 메시지 표시 */}
+          {/* 슬라이드가 없을 때 메시지 표시 */}
+          <div>슬라이드가 없습니다.</div>
         </SwiperSlide>
       )}
     </Swiper>

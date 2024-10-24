@@ -2,11 +2,11 @@
   {
     "id": 1,
     "fieldname": "file",
-    "mimetype": "image/jpeg",
+    "mimetype": "image/png",
     "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
-    "filename": "e3ba87234de01324.jpg",
-    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\e3ba87234de01324.jpg",
-    "size": 806059,
-    "url": "http://localhost:3000/uploads/e3ba87234de01324.jpg"
+    "filename": "3e5efac5de59fe02.png",
+    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\3e5efac5de59fe02.png",
+    "size": 764979,
+    "url": "http://localhost:3000/uploads/3e5efac5de59fe02.png"
   }
 ]
