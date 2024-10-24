@@ -9,7 +9,7 @@ export default function DisplaySetting() {
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const response = await axios.get('./config.json'); // config.json의 경로
+        const response = await axios.get('/config.json'); // config.json의 경로
         setCount(response.data.delaySec); // config에서 delaySec 값으로 초기화
       } catch (error) {
         console.error('Error fetching config:', error);
