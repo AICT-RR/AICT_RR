@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DndContext } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
-import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
-
+import ImageItem from './ImageItem'; 
 function FileUpload() {
     const [file, setFile] = useState(null);
     const [fileList, setFileList] = useState([]);

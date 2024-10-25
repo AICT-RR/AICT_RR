@@ -3,20 +3,20 @@
     "id": 1,
     "fieldname": "file",
     "mimetype": "image/jpeg",
-    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
-    "filename": "978899ac5057aac9.jpg",
-    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\978899ac5057aac9.jpg",
-    "size": 184195,
-    "url": "http://localhost:3000/uploads/978899ac5057aac9.jpg"
-  },
-  {
-    "id": 2,
-    "fieldname": "file",
-    "mimetype": "image/jpeg",
     "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
     "filename": "e3ba87234de01324.jpg",
     "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\e3ba87234de01324.jpg",
     "size": 806059,
     "url": "http://localhost:3000/uploads/e3ba87234de01324.jpg"
+  },
+  {
+    "id": 2,
+    "fieldname": "file",
+    "mimetype": "image/jpeg",
+    "destination": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads",
+    "filename": "978899ac5057aac9.jpg",
+    "path": "C:\\Users\\wonny\\garden3\\AICT_RR\\client\\public\\uploads\\978899ac5057aac9.jpg",
+    "size": 184195,
+    "url": "http://localhost:3000/uploads/978899ac5057aac9.jpg"
   }
 ]
