@@ -1,89 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './Settings.css';
 
 export default function DisplaySetting() {
-  const [count, setCount] = useState(0); // 초기값을 null로 설정
+  const [count, setCount] = useState(null); // 초기값을 null로 설정
   const [selectedEffect, setSelectedEffect] = useState('');
 
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const response = await axios.get('/config.json'); // config.json의 경로
-        setCount(response.data.delaySec); // config에서 delaySec 값으로 초기화
+        const response = await axios.get('/config.json');
+        setCount(response.data.delaySec);
       } catch (error) {
         console.error('Error fetching config:', error);
       }
     };
-
     fetchConfig();
-  }, []); // 빈 배열로 인해 처음 렌더링할 때만 실행
+  }, []);
 
-  const Increase = () => {
+  const Increase = useCallback(() => {
     if (count !== null) {
       const newCount = count + 1;
-      console.log('New count (Increase):', newCount); // 확인용 로그
       setCount(newCount);
-      saveDelaySec(newCount); // delaySec을 저장
+      saveDelaySec(newCount);
     }
-  };
+  }, [count]);
 
-  const Decrease = () => {
+  const Decrease = useCallback(() => {
     if (count > 1) {
       const newCount = count - 1;
-      console.log('New count (Decrease):', newCount); // 확인용 로그
       setCount(newCount);
-      saveDelaySec(newCount); // delaySec을 저장
+      saveDelaySec(newCount);
     }
-  };
+  }, [count]);
 
-  const Reset = () => {
+  const Reset = useCallback(() => {
     const defaultDelay = 15;
-    console.log('Default delay (Reset):', defaultDelay); // 확인용 로그
     setCount(defaultDelay);
-    saveDelaySec(defaultDelay); // delaySec을 15로 리셋
-  };
+    saveDelaySec(defaultDelay);
+  }, []);
 
-  const handleEffectClick = (effect) => {
+  const handleEffectClick = useCallback((effect) => {
     setSelectedEffect(effect);
-  };
+  }, []);
 
-  // 서버에 delaySec 값을 저장하는 함수
   const saveDelaySec = async (newDelaySec) => {
     try {
-      console.log('Saving delaySec:', newDelaySec); // 확인용 로그
       await axios.post('http://localhost:5000/api/saveCount', { count: newDelaySec });
-      console.log('DelaySec updated successfully!');
     } catch (error) {
       console.error('Error updating delaySec:', error);
     }
   };
 
   if (count === null) {
-    return <div>Loading...</div>; // count 값이 null일 때 로딩 표시
+    return <div>Loading...</div>; // count가 null일 때 로딩 표시
   }
 
   return (
     <div>
       <h1>DisplaySetting</h1>
       <div role='group'>
-        <button className={selectedEffect === 'Fade' ? 'selected' : 'unselected'} onClick={() => handleEffectClick('Fade')}>
-          Fade
-        </button>
-        <button className={selectedEffect === 'Slide' ? 'selected' : 'unselected'} onClick={() => handleEffectClick('Slide')}>
-          Slide
-        </button>
-        <button className={selectedEffect === 'CoverFlow' ? 'selected' : 'unselected'} onClick={() => handleEffectClick('CoverFlow')}>
-          CoverFlow
-        </button>
-        <button className={selectedEffect === 'cube' ? 'selected' : 'unselected'} onClick={() => handleEffectClick('cube')}>
-          cube
-        </button>
+        <EffectButton effect="Fade" selectedEffect={selectedEffect} handleEffectClick={handleEffectClick} />
+        <EffectButton effect="Slide" selectedEffect={selectedEffect} handleEffectClick={handleEffectClick} />
+        <EffectButton effect="CoverFlow" selectedEffect={selectedEffect} handleEffectClick={handleEffectClick} />
+        <EffectButton effect="cube" selectedEffect={selectedEffect} handleEffectClick={handleEffectClick} />
       </div>
-      <h2>{count}초</h2>
+      <h2>{count}초</h2> {/* count가 정상적으로 표시됩니다 */}
       <button className='outline' onClick={Increase}>+</button>
       <button className='outline' onClick={Decrease}>-</button>
       <button className='outline' onClick={Reset}>15</button>
     </div>
   );
 }
+
+const EffectButton = React.memo(({ effect, selectedEffect, handleEffectClick }) => {
+  return (
+    <button
+      className={selectedEffect === effect ? 'selected' : 'unselected'}
+      onClick={() => handleEffectClick(effect)}
+    >
+      {effect}
+    </button>
+  );
+});
