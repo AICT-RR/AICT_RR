@@ -132,6 +132,10 @@ function FileUpload() {
         </form>
       </div>
 
+      <div className='description'>
+        <img src='/image/information.png' alt='info-img' className='info'/>이미지를 드래그해서 순서를 조정할 수 있어요
+      </div>
+
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEndWrapper}>
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>

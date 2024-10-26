@@ -46,3 +46,19 @@
   padding: 10px;
   border-radius: 5px;
 }
+
+.description {
+  font-size: 1.2rem;
+  color: #FF9512;
+  /*margin: 15px 0;*/
+  text-align: center;
+}
+
+.info {
+  width: 24px; 
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+  filter: invert(56%) sepia(90%) saturate(700%) hue-rotate(-10deg) brightness(100%) contrast(100%);
+}
+
