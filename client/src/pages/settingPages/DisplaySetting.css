@@ -1,0 +1,58 @@
+.second {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: flex-start; /* 왼쪽 정렬 */
+  gap: 10px;
+}
+
+.cho {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 왼쪽 정렬 */
+  gap: 20px;
+}
+
+.first-row, .second-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #FC670C; /* 버튼 배경색 */
+  color: white;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 80px;       /* 고정 너비 */
+  height: 40px;      /* 고정 높이 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #f0f0f0; /* 박스 배경색 */
+  font-size: 16px;
+}
+
+.secbtn{
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #dfdfdf; /* 버튼 배경색 */
+  color: black;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 24px;
+}

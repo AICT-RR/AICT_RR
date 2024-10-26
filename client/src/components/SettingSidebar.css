@@ -1,0 +1,74 @@
+h1.brandtitle {
+  padding: 0 16px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.nav-deco {
+display: inlin-block;
+margin-right: 4px;
+background-color: #3db8ff00;
+border-radius: 8px;
+height: 40px;
+width: 6px;
+}
+
+/* .nav-link.active .nav-deco {
+    background-color: #3db8ff;
+} */
+
+.nav-text {
+  padding-left: 32px;
+  position: absolute;
+  left: 68%;
+  transform: translateX(-50%);
+  width: 100%;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  /* padding: 6px; */
+  font-size: 1.4rem;
+  /* text-align: center; */
+  margin-left: 22px;
+  margin-top: 30px;
+}
+
+
+.nav-link.active {
+  color: #FC670C;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  margin: 0 8px 16px 8px;
+  /* padding: 12px; */
+}
+li .active {
+  margin-top: 30px;
+  border-radius: 8px;
+  background-color: #FFEAC1;
+  width: 200px;
+  height: 200px;
+  margin-left: 22px;
+}
+
+a {
+  display: block;
+  decoration: none;
+}

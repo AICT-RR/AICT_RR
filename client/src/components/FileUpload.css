@@ -1,0 +1,26 @@
+.select {
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+  }
+
+  .upload {
+    display: none;
+  }
+
+  .upload-label {
+    display: inline-block;
+    width: 150vh;
+    padding: 15px 0;
+    background-color: #FC670C;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  .upload-label:active {
+    background-color: #e0e0e0;
+    border-color: #888;
+  }
