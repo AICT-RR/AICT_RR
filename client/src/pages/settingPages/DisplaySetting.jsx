@@ -4,7 +4,7 @@ import './Settings.css';
 import './DisplaySetting.css';
 
 export default function DisplaySetting() {
-  const [count, setCount] = useState(0); // 초기값을 null로 설정
+  const [count, setCount] = useState(null); // 초기값을 null로 설정
 
   useEffect(() => {
     const fetchConfig = async () => {
@@ -19,16 +19,18 @@ export default function DisplaySetting() {
     fetchConfig();
   }, []); // 빈 배열로 인해 처음 렌더링할 때만 실행
 
-  const Increase = () => {
+  const Increase = (event) => {
+    event.preventDefault();
     if (count !== null) {
       const newCount = count + 1;
-      console.log('New count (Increase):', newCount); // 확인용 로그
       setCount(newCount);
+      console.log('New count (Increase):', newCount); // 확인용 로그
       saveDelaySec(newCount); // delaySec을 저장
     }
   };
 
-  const Decrease = () => {
+  const Decrease = (event) => {
+    event.preventDefault();
     if (count > 1) {
       const newCount = count - 1;
       console.log('New count (Decrease):', newCount); // 확인용 로그
@@ -81,13 +83,13 @@ export default function DisplaySetting() {
       <div className='cho'>
       
         <div className='first-row'>
-          <button className='btn' onClick={Decrease}>-</button>
+          <button className='btn' onClick={Decrease} type='button'>-</button>
           <div className='box'><h2>{count}초</h2></div>
-          <button className='btn' onClick={Increase}>+</button>
+          <button className='btn' onClick={Increase} type='button'>+</button>
         </div>
 
         <div className='second-row'>
-          <button className='secbtn' onClick={Reset15}><img src='/image/clock.png' alt='clock' width='20px' />15</button>
+          <button className='secbtn' onClick={Reset15}><img src='/image/clock.png' alt='clock' width='20px'/>15</button>
           <button className='secbtn' onClick={Reset30}><img src='/image/clock.png' alt='clock' width='20px' />30</button>
           <button className='secbtn' onClick={Reset60}><img src='/image/clock.png' alt='clock' width='20px' />60</button>
         </div>

@@ -21,7 +21,6 @@ function FileUpload() {
       const files = await response.json();
       setFileList(files);
     } catch (error) {
-      console.error('Error fetching files:', error);
       alert('파일 목록을 불러오는 데 오류가 발생했습니다.');
     }
   };
@@ -54,11 +53,9 @@ function FileUpload() {
         setFile(null); // 선택된 파일 초기화
         fetchFiles(); // 파일 목록 다시 불러오기 (업로드 후)
       } else {
-        console.error('File upload failed');
         alert('파일 업로드에 실패했습니다.');
       }
     } catch (error) {
-      console.error('Error uploading file:', error);
       alert('파일 업로드 중 오류가 발생했습니다.');
     }
   };
@@ -78,11 +75,9 @@ function FileUpload() {
             prevList.filter((file) => file !== fileName)
           );
         } else {
-          console.error('Error deleting file:', response.statusText);
           alert('파일 삭제에 실패했습니다.');
         }
       } catch (error) {
-        console.error('Error deleting file:', error);
         alert('파일 삭제 중 오류가 발생했습니다.');
       }
     }
@@ -112,7 +107,6 @@ function FileUpload() {
         throw new Error('파일 순서 업데이트에 실패했습니다.');
       }
     } catch (error) {
-      console.error('Error updating file order:', error);
       alert('파일 순서 업데이트 중 오류가 발생했습니다.');
     }
   };
@@ -127,33 +121,21 @@ function FileUpload() {
   };
 
   return (
-    <div>
-      <div class='select'>
+    <div className='container'>
+      <div className='select'>
         <form enctype='multipart/form-data'>
-          <label for='file' class='upload-label'>
-            <img src='/image/upload.png' alt='upload' width="28px" style={{ marginRight: '10px' }}/>
+          <label for='file' className='upload-label'>
+            <img src='/image/upload.png' alt='upload' width="28px"/>
             <span style={{ color: 'white' }}>이미지 업로드</span>
           </label>
-          <input type='file' id='file' name='file' class='upload' onChange={handleFileChange}/>
+          <input type='file' id='file' name='file' className='upload' onChange={handleFileChange}/>
         </form>
       </div>
 
-      <DndContext
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEndWrapper}
-      >
+      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEndWrapper}>
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                margin: '10px',
-                backgroundColor: '#f0f0f0',
-                padding: '10px',
-                borderRadius: '5px',
-              }}
-            >
+            <div className='card'>
               {fileList.map((fileName, index) => (
                 <ImageItem
                   key={index}

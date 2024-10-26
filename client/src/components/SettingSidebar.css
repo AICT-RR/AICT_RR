@@ -11,12 +11,12 @@ h1.brandtitle {
 }
 
 .nav-deco {
-display: inlin-block;
-margin-right: 4px;
-background-color: #3db8ff00;
-border-radius: 8px;
-height: 40px;
-width: 6px;
+  display: inlin-block;
+  margin-right: 4px;
+  background-color: #3db8ff00;
+  border-radius: 8px;
+  height: 40px;
+  width: 6px;
 }
 
 /* .nav-link.active .nav-deco {
@@ -42,9 +42,8 @@ width: 6px;
   margin-top: 30px;
 }
 
-
 .nav-link.active {
-  color: #FC670C;
+  color: #fc670c;
   font-weight: bold;
 }
 
@@ -62,7 +61,7 @@ li {
 li .active {
   margin-top: 30px;
   border-radius: 8px;
-  background-color: #FFEAC1;
+  background-color: #ffeac1;
   width: 200px;
   height: 200px;
   margin-left: 22px;

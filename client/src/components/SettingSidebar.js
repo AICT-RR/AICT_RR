@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './SettingSidebar.css';
 
 export default function SettingSidebar() {
   return (
     <div>
-      {/* <h1 className='brandtitle'>Babara</h1> */}
       <nav>
         <ul>
           <li>
