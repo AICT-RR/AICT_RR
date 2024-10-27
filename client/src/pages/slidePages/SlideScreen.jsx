@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Slider from '../../components/Slider';
 import axios from 'axios';
 import './SlideScreen.css';
@@ -52,11 +51,6 @@ export default function SlideScreen() {
 
   return (
     <div className="toolbar-container">
-      <div className="hover-toolbar">
-        <Link to="/settings"> {/* Logo is now clickable to navigate home */}
-          <img src="/image/1.png" alt="Logo" className="toolbar-logo" />
-        </Link>
-      </div>
       <Slider className="slide" slides={slides} mode={slideMode} delay={delaySec} />
     </div>
   );

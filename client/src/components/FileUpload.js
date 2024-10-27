@@ -5,7 +5,7 @@ import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
 import './FileUpload.css';
 
 function FileUpload() {
-  const [file, setFile] = useState(null);
+  const [setFile] = useState(null);
   const [fileList, setFileList] = useState([]);
   const [isDragging, setIsDragging] = useState(false); // 드래그 상태 관리
 
@@ -123,7 +123,7 @@ function FileUpload() {
   return (
     <div className='container'>
       <div className='select'>
-        <form enctype='multipart/form-data'>
+        <form encType='multipart/form-data'>
           <label htmlFor='file' className='upload-label'>
             <img src='/image/upload.png' alt='upload' width="28px"/>
             <span style={{ color: 'white' }}>이미지 업로드</span>
