@@ -124,7 +124,7 @@ function FileUpload() {
     <div className='container'>
       <div className='select'>
         <form enctype='multipart/form-data'>
-          <label for='file' className='upload-label'>
+          <label htmlFor='file' className='upload-label'>
             <img src='/image/upload.png' alt='upload' width="28px"/>
             <span style={{ color: 'white' }}>이미지 업로드</span>
           </label>
