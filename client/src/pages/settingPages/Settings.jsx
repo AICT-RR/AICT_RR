@@ -15,6 +15,9 @@ export default function Settings() {
         <div className='settings-content'>
           <Outlet />
         </div>
+        <div className='settings-container'>
+          
+        </div>
       </div>
     </div>
   );
