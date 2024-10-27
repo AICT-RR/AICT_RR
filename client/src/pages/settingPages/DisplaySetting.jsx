@@ -19,8 +19,7 @@ export default function DisplaySetting() {
     fetchConfig();
   }, []); // 빈 배열로 인해 처음 렌더링할 때만 실행
 
-  const Increase = (event) => {
-    event.preventDefault();
+  const Increase = () => {
     if (count !== null) {
       const newCount = count + 1;
       setCount(newCount);
@@ -29,8 +28,7 @@ export default function DisplaySetting() {
     }
   };
 
-  const Decrease = (event) => {
-    event.preventDefault();
+  const Decrease = () => {
     if (count > 1) {
       const newCount = count - 1;
       console.log('New count (Decrease):', newCount); // 확인용 로그
@@ -39,25 +37,10 @@ export default function DisplaySetting() {
     }
   };
 
-  const Reset15 = () => {
-    const defaultDelay = 15;
+  const Reset = (defaultDelay) => {
     console.log('Default delay (Reset):', defaultDelay); // 확인용 로그
     setCount(defaultDelay);
-    saveDelaySec(defaultDelay); // delaySec을 15로 리셋
-  };
-  
-  const Reset30 = () => {
-    const defaultDelay = 30;
-    console.log('Default delay (Reset):', defaultDelay); // 확인용 로그
-    setCount(defaultDelay);
-    saveDelaySec(defaultDelay); // delaySec을 15로 리셋
-  };
-
-  const Reset60 = () => {
-    const defaultDelay = 60;
-    console.log('Default delay (Reset):', defaultDelay); // 확인용 로그
-    setCount(defaultDelay);
-    saveDelaySec(defaultDelay); // delaySec을 15로 리셋
+    saveDelaySec(defaultDelay); // delaySec을 defaultDelay로 리셋
   };
 
   // 서버에 delaySec 값을 저장하는 함수
@@ -83,15 +66,15 @@ export default function DisplaySetting() {
       <div className='cho'>
       
         <div className='first-row'>
-          <button className='btn' onClick={Decrease} type='button'>-</button>
+          <button className='btn' onClick={() => Decrease()} type='button'>-</button>
           <div className='box'><h2>{count}초</h2></div>
-          <button className='btn' onClick={Increase} type='button'>+</button>
+          <button className='btn' onClick={() => Increase()} type='button'>+</button>
         </div>
 
         <div className='second-row'>
-          <button className='secbtn' onClick={Reset15}><img src='/image/clock.png' alt='clock' width='20px'/>15</button>
-          <button className='secbtn' onClick={Reset30}><img src='/image/clock.png' alt='clock' width='20px' />30</button>
-          <button className='secbtn' onClick={Reset60}><img src='/image/clock.png' alt='clock' width='20px' />60</button>
+          <button className='secbtn' onClick={() => Reset(15)} type='button'><img src='/image/clock.png' alt='clock' width='20px'/>15</button>
+          <button className='secbtn' onClick={() => Reset(30)} type='button'><img src='/image/clock.png' alt='clock' width='20px' />30</button>
+          <button className='secbtn' onClick={() => Reset(60)} type='button'><img src='/image/clock.png' alt='clock' width='20px' />60</button>
         </div>
       
       </div>
