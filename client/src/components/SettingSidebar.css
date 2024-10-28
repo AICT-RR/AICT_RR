@@ -5,17 +5,12 @@ h1.brandtitle {
 .nav-item {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   width: 200px;
   height: 200px;
-=======
-  width: 100%;
->>>>>>> origin/main
   position: relative;
 }
 
 .nav-deco {
-<<<<<<< HEAD
   display: inlin-block;
   margin-right: 4px;
   background-color: #3db8ff00;
@@ -27,40 +22,19 @@ h1.brandtitle {
 /* .nav-link.active .nav-deco {
     background-color: #3db8ff;
 } */
-=======
-display: inlin-block;
-margin-right: 4px;
-background-color: #3db8ff00;
-border-radius: 8px;
-height: 40px;
-width: 6px;
-}
-
-.nav-link.active .nav-deco {
-    background-color: #3db8ff;
-    /* border: solid red 1px; */
-}
->>>>>>> origin/main
 
 .nav-text {
   padding-left: 32px;
   position: absolute;
-<<<<<<< HEAD
   left: 68%;
   transform: translateX(-50%);
   width: 100%;
   font-weight: bold;
-=======
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
->>>>>>> origin/main
 }
 
 .nav-link {
   color: black;
   text-decoration: none;
-<<<<<<< HEAD
   /* padding: 6px; */
   font-size: 1.4rem;
   /* text-align: center; */
@@ -71,17 +45,6 @@ width: 6px;
 .nav-link.active {
   color: #fc670c;
   font-weight: bold;
-=======
-  padding: 6px;
-  font-size: 1.4rem;
-  text-align: left;
-}
-
-
-.nav-link.active {
-  color: #3db8ff;
-  /* font-weight: bold; */
->>>>>>> origin/main
 }
 
 ul {
@@ -96,25 +59,12 @@ li {
   /* padding: 12px; */
 }
 li .active {
-<<<<<<< HEAD
   margin-top: 30px;
   border-radius: 8px;
   background-color: #ffeac1;
   width: 200px;
   height: 200px;
   margin-left: 22px;
-=======
-  border-radius: 8px;
-  background-color: #ecf4ff;
-}
-
-li a {
-  /* font-size: 1.4rem; */
-  /* color: #000; */
-  /* color: #3db8ff; */
-  /* padding: 8px 16px; */
-  /* text-decoration: none; */
->>>>>>> origin/main
 }
 
 a {
