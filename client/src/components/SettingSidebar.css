@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1.brandtitle {
   padding: 0 16px;
 }
@@ -10,14 +15,6 @@ h1.brandtitle {
   position: relative;
 }
 
-.nav-deco {
-  display: inlin-block;
-  margin-right: 4px;
-  background-color: #3db8ff00;
-  border-radius: 8px;
-  height: 40px;
-  width: 6px;
-}
 
 /* .nav-link.active .nav-deco {
     background-color: #3db8ff;
@@ -55,19 +52,50 @@ ul {
 }
 
 li {
-  margin: 0 8px 16px 8px;
+  margin: 0;
+  padding: 0;
+  /* margin: 0 8px 16px 8px; */
   /* padding: 12px; */
+  /* float: left; */
+
 }
 li .active {
   margin-top: 30px;
   border-radius: 8px;
   background-color: #ffeac1;
-  width: 200px;
-  height: 200px;
+  /* width: 200px; */
+  /* height: 200px; */
   margin-left: 22px;
 }
 
 a {
   display: block;
   decoration: none;
+}
+
+@media (max-width: 768px) {
+  li {
+    width: 100%;
+    display: block;
+    /* float: left; */
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    /* width: 200px; */
+    width: inherit;
+    height: 20px;
+    position: relative;
+    background-color: #f00;
+  }
+}
+@media (min-width: 768px) {
+  li .active {
+    margin-top: 30px;
+    border-radius: 8px;
+    background-color: #ffeac1;
+    width: 200px;
+    height: 200px;
+    margin-left: 22px;
+  }
 }

@@ -19,7 +19,8 @@ export default function SettingSidebar() {
                 <div className='nav-text'>슬라이드</div>
               </div>
             </NavLink>
-
+          </li>
+          <li>
             <NavLink
               to='display'
               className={({ isActive }) =>
