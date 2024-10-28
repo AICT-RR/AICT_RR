@@ -5,7 +5,7 @@ import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
 import './FileUpload.css';
 
 function FileUpload() {
-  const [setFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [fileList, setFileList] = useState([]);
   const [isDragging, setIsDragging] = useState(false); // 드래그 상태 관리
 
