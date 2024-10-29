@@ -143,12 +143,13 @@ function FileUpload() {
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>
             <div className='card'>
-              {fileList.map((fileName, index) => (
+              {fileList.map((fileName, id) => (
                 <ImageItem
-                  key={index}
+                  key={fileName}
                   fileName={fileName}
                   onDelete={handleDelete}
                   isDragging={isDragging}
+                  sortId={id}
                 />
               ))}
             </div>

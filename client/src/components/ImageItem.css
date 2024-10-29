@@ -1,5 +1,8 @@
 .card-item {
-  /* padding: 10px; */
+  padding: 10px;
+}
+.card-item:active {
+  z-index: 100;
 }
 
 .card-bg {

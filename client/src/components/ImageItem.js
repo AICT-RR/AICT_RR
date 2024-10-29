@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 import './ImageItem.css';
 import { ReactComponent as CloseIcon } from '../icons/fluent--dismiss-24-filled.svg';
 
-function ImageItem({ fileName, onDelete }) {
+function ImageItem({ fileName, onDelete, sortId }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: fileName });
 
@@ -28,7 +28,7 @@ function ImageItem({ fileName, onDelete }) {
           {...listeners} // 드래그 리스너를 이미지에만 적용
         />
       </div>
-      <div className='card-idx'>hi</div>
+      <div className='card-idx'>{sortId + 1}</div>
     </div>
   );
 }
