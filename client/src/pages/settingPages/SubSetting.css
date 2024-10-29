@@ -3,6 +3,7 @@
 }
 
 .settingTitle {
-  padding: 0 30px;
+  margin-top: 0.4rem;
   font-size: 38px;
+  color: var(--theme-darkbrown-color);
 }

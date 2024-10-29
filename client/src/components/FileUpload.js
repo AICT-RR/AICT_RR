@@ -122,20 +122,23 @@ function FileUpload() {
 
   return (
     <div className='container'>
-      <div className='select'>
+      {/* 업로드 버튼 */}
+      <div className='upload-button-container'>
         <form encType='multipart/form-data'>
-          <label htmlFor='file' className='upload-label'>
+          <label htmlFor='file' className='upload-button'>
             <img src='/image/upload.png' alt='upload' width="28px"/>
-            <span style={{ color: 'white' }}>이미지 업로드</span>
+            <span>이미지 업로드</span>
           </label>
           <input type='file' id='file' name='file' className='upload' onChange={handleFileChange}/>
         </form>
       </div>
 
+      {/* 안내 문구 */}
       <div className='description'>
-        <img src='/image/information.png' alt='info-img' className='info'/>이미지를 드래그해서 순서를 조정할 수 있어요
+        <img src='/image/information.png' alt='info-img' className='info-icon'/>이미지를 드래그해서 순서를 조정할 수 있어요
       </div>
 
+      {/* 이미지 리스트 */}
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEndWrapper}>
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>
@@ -151,7 +154,7 @@ function FileUpload() {
             </div>
           </SortableContext>
         ) : (
-          <p>No images uploaded yet.</p>
+          <p>이미지가 없습니다!!</p>
         )}
       </DndContext>
     </div>

@@ -1,31 +1,30 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.select {
-  width: 100%;
-  margin: 5px;
-  padding: 8px;
+.container {
+  max-width: 1200px;
+}
+
+.upload-button-container {
+  border-radius: 1rem;
+  background-color: var(--theme-orange-color);
+  color: white;
 }
 
 .upload {
   display: none;
 }
 
-.upload-label {
+.upload-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 1118px;
-  padding: 15px 0;
-  background-color: #fc670c;
+  padding: 1rem 0;
   cursor: pointer;
-  font-size: 28px;
-  border-radius: 8px;
-  gap: 10px;
+  font-size: 1.6rem;
+  gap: 1rem;
 }
 
 .upload-label img {
@@ -41,10 +40,11 @@
 .card {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: white;
+  padding: 0.6rem;
+  height: 100%;
+  border-radius: 1rem;
+  border: 2px solid var(--theme-lightyellow-color);
 }
 
 .description {
@@ -52,9 +52,10 @@
   color: #FF9512;
   /*margin: 15px 0;*/
   text-align: center;
+  padding: 1rem;
 }
 
-.info {
+.info-icon {
   width: 24px; 
   height: 24px;
   vertical-align: middle;
