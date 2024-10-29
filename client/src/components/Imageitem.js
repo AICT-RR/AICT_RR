@@ -8,6 +8,7 @@ function ImageItem({ fileName, onDelete }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: fileName });
 
+    
   return (
     <div
       className='card-item'
