@@ -8,10 +8,14 @@ export default function SlideScreen() {
   const [loading, setLoading] = useState(true);
   const [slides, setSlides] = useState([]);
 
+  // 현재 접속 중인 호스트 주소를 사용하여 API URL 구성
+  const apiUrl = `http://${window.location.hostname}:5000`;
+
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const response = await fetch('http://localhost:5000/getImage', {
+        // const response = await fetch('http://localhost:5000/getImage', {
+        const response = await fetch(apiUrl + '/getImage', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
