@@ -22,16 +22,6 @@
   
   .settings-sidebar {
     width: 100%; /* 모바일에서는 전체 너비 차지 */
-    border-bottom: 2px solid #FC670C;
+    border-bottom: 2px solid #dfdfdf;
   }
-}
-
-button.selected {
-  background-color: blue;
-  color: white;
-}
-
-button.unselected {
-  background-color: white;
-  color: blue;
 }

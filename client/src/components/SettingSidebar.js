@@ -15,7 +15,6 @@ export default function SettingSidebar() {
               }
             >
               <div className='nav-item'>
-                <div className='nav-deco'></div>
                 <div className='nav-text'>슬라이드</div>
               </div>
             </NavLink>
@@ -28,7 +27,6 @@ export default function SettingSidebar() {
               }
             >
               <div className='nav-item'>
-                <div className='nav-deco'></div>
                 <div className='nav-text'>전환 설정</div>
               </div>
             </NavLink>

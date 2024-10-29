@@ -1,5 +1,7 @@
 .topbar{
     width: 100%; /* 사이드 바 너비 */
+    height: 60px;
     background-color: #FFAD0C; /* 사이드 바 배경색 */
-    padding: 10px;
+    padding: 8px;
+    /* border-bottom: 3px solid #FFAD0C; */
 }
