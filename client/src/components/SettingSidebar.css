@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1.brandtitle {
   padding: 0 16px;
 }
@@ -5,44 +10,38 @@ h1.brandtitle {
 .nav-item {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 200px;
+  height: 200px;
   position: relative;
 }
 
-.nav-deco {
-display: inlin-block;
-margin-right: 4px;
-background-color: #3db8ff00;
-border-radius: 8px;
-height: 40px;
-width: 6px;
-}
 
-.nav-link.active .nav-deco {
+/* .nav-link.active .nav-deco {
     background-color: #3db8ff;
-    /* border: solid red 1px; */
-}
+} */
 
 .nav-text {
   padding-left: 32px;
   position: absolute;
-  left: 50%;
+  left: 68%;
   transform: translateX(-50%);
   width: 100%;
+  font-weight: bold;
 }
 
 .nav-link {
   color: black;
   text-decoration: none;
-  padding: 6px;
+  /* padding: 6px; */
   font-size: 1.4rem;
-  text-align: left;
+  /* text-align: center; */
+  margin-left: 22px;
+  margin-top: 30px;
 }
 
-
 .nav-link.active {
-  color: #3db8ff;
-  /* font-weight: bold; */
+  color: #fc670c;
+  font-weight: bold;
 }
 
 ul {
@@ -53,23 +52,50 @@ ul {
 }
 
 li {
-  margin: 0 8px 16px 8px;
+  margin: 0;
+  padding: 0;
+  /* margin: 0 8px 16px 8px; */
   /* padding: 12px; */
+  /* float: left; */
+
 }
 li .active {
+  margin-top: 30px;
   border-radius: 8px;
-  background-color: #ecf4ff;
-}
-
-li a {
-  /* font-size: 1.4rem; */
-  /* color: #000; */
-  /* color: #3db8ff; */
-  /* padding: 8px 16px; */
-  /* text-decoration: none; */
+  background-color: #ffeac1;
+  /* width: 200px; */
+  /* height: 200px; */
+  margin-left: 22px;
 }
 
 a {
   display: block;
   decoration: none;
+}
+
+@media (max-width: 768px) {
+  li {
+    width: 100%;
+    display: block;
+    /* float: left; */
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    /* width: 200px; */
+    width: inherit;
+    height: 20px;
+    position: relative;
+    background-color: #f00;
+  }
+}
+@media (min-width: 768px) {
+  li .active {
+    margin-top: 30px;
+    border-radius: 8px;
+    background-color: #ffeac1;
+    width: 200px;
+    height: 200px;
+    margin-left: 22px;
+  }
 }

@@ -2,21 +2,21 @@
   {
     "id": 1,
     "fieldname": "file",
-    "mimetype": "image/jpeg",
-    "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
-    "filename": "833521512ca764d8.jpg",
-    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\833521512ca764d8.jpg",
-    "size": 1260938,
-    "url": "http://localhost:3000/uploads/833521512ca764d8.jpg"
+    "mimetype": "image/png",
+    "destination": "G:\\AICT_RR\\aict_rr-yj3_1026\\AICT_RR\\client\\public\\uploads",
+    "filename": "0669c8cc956559fa.png",
+    "path": "G:\\AICT_RR\\aict_rr-yj3_1026\\AICT_RR\\client\\public\\uploads\\0669c8cc956559fa.png",
+    "size": 764979,
+    "url": "http://localhost:3000/uploads/0669c8cc956559fa.png"
   },
   {
     "id": 2,
     "fieldname": "file",
     "mimetype": "image/jpeg",
-    "destination": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads",
-    "filename": "7f10af1e4ca85156.jpg",
-    "path": "G:\\AICT_RR\\aict_rr\\client\\public\\uploads\\7f10af1e4ca85156.jpg",
-    "size": 3036226,
-    "url": "http://localhost:3000/uploads/7f10af1e4ca85156.jpg"
+    "destination": "G:\\AICT_RR\\aict_rr-yj3_1026\\AICT_RR\\client\\public\\uploads",
+    "filename": "dc796882cecb9825.jpg",
+    "path": "G:\\AICT_RR\\aict_rr-yj3_1026\\AICT_RR\\client\\public\\uploads\\dc796882cecb9825.jpg",
+    "size": 97797,
+    "url": "http://localhost:3000/uploads/dc796882cecb9825.jpg"
   }
 ]
