@@ -48,6 +48,23 @@ body {
   margin-bottom: 8rem;
 }
 
+.no-card {
+  background-color: var(--theme-lightyellow-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--theme-darkbrown-color);
+  flex-direction: column;
+  margin-bottom: 2rem !important;
+  padding: 1rem;
+}
+
+.no-file-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.4rem;
+}
+
 .desc-container {
   color: var(--theme-orange-color);
   display: flex;

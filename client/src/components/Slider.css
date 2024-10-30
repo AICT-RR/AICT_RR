@@ -1,0 +1,31 @@
+.no-slide {
+  color: var(--theme-darkbrown-color);
+  background-color: var(--theme-lightyellow-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-file-icon {
+  width: 6rem !important;
+  height: 6rem !important;
+  margin: 1rem !important;
+}
+
+.no-slide-link {
+    color: var(--theme-orange-color);
+    display: inline-block;
+  }
+
+.no-slide-desc {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* 설정과 설명 간의 간격 */
+}
+
+.no-slide-title {
+    margin: 0;
+    font-size: 1.8rem;
+}

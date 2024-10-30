@@ -5,6 +5,7 @@ import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
 import './FileUpload.css';
 import { ReactComponent as UploadIcon } from '../icons/fluent--arrow-upload-20-filled.svg';
 import { ReactComponent as InfoIcon } from '../icons/fluent--info-20-regular.svg';
+import { ReactComponent as NoFileIcon } from '../icons/fluent--document-split-hint-off-20-regular.svg';
 
 function FileUpload() {
   const [file, setFile] = useState(null);
@@ -138,20 +139,27 @@ function FileUpload() {
             <UploadIcon />
             <span>이미지 업로드</span>
           </label>
-          <input type='file' id='file' name='file' className='upload' onChange={handleFileChange}/>
+          <input
+            type='file'
+            id='file'
+            name='file'
+            className='upload'
+            onChange={handleFileChange}
+          />
         </form>
       </div>
 
       {/* 안내 문구 */}
       <div className='desc-container'>
         <InfoIcon className='info-icon' />
-        <p className='desc'>
-          이미지를 드래그해서 순서를 조정할 수 있어요
-        </p>
+        <p className='desc'>이미지를 드래그해서 순서를 조정할 수 있어요</p>
       </div>
 
       {/* 이미지 리스트 */}
-      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEndWrapper}>
+      <DndContext
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEndWrapper}
+      >
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>
             <div className='card'>
@@ -167,7 +175,14 @@ function FileUpload() {
             </div>
           </SortableContext>
         ) : (
-          <p>이미지가 없습니다!!</p>
+          <div className='card no-card'>
+            <NoFileIcon className='no-file-icon' />
+            <p style={{ textAlign: 'center' }}>
+              이미지가 아직 없어요
+              <br />
+              업로드 버튼을 눌러 추가해 보세요
+            </p>
+          </div>
         )}
       </DndContext>
     </div>

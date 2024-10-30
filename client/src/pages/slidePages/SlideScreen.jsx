@@ -48,7 +48,7 @@ export default function SlideScreen() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>잠시만 기다려주세요</div>;
   }
 
   const { slideMode, delaySec } = config;
