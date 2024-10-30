@@ -7,7 +7,7 @@ import SlideSetting from './pages/settingPages/SlideSetting';
 
 function App() {
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       <Routes>
         <Route path='/' element={<SlideScreen />} />
         <Route path='/settings' element={<Settings />}>

@@ -1,9 +1,14 @@
 .second {
   display: flex;
   flex-direction: column;
-  padding: 0 16px;
+  padding: 0 20px;
   align-items: flex-start; /* 왼쪽 정렬 */
   gap: 10px;
+}
+
+.second h1 {
+  font-size: 38px;
+  padding: 0 20px;
 }
 
 .cho {
@@ -11,12 +16,14 @@
   flex-direction: column;
   align-items: flex-start; /* 왼쪽 정렬 */
   gap: 20px;
+  padding: 0 20px;
 }
 
 .first-row, .second-row {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 14px 0;
 }
 
 .btn {

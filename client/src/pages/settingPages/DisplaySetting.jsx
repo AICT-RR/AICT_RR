@@ -5,8 +5,12 @@ import './DisplaySetting.css';
 
 export default function DisplaySetting() {
   const [count, setCount] = useState(null); // 초기값을 null로 설정
+  
+  // 현재 접속 중인 호스트 주소를 사용하여 API URL 구성
+  const apiUrl = `http://${window.location.hostname}:5000`;
 
   useEffect(() => {
+
     const fetchConfig = async () => {
       try {
         const response = await axios.get('/config.json'); // config.json의 경로
@@ -47,7 +51,8 @@ export default function DisplaySetting() {
   const saveDelaySec = async (newDelaySec) => {
     try {
       console.log('Saving delaySec:', newDelaySec); // 확인용 로그
-      await axios.post('http://localhost:5000/api/saveCount', {
+      // await axios.post('http://localhost:5000/api/saveCount', {
+      await axios.post(apiUrl + '/api/saveCount', {
         count: newDelaySec,
       });
       console.log('DelaySec updated successfully!');

@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use('/uploads', express.static(path.join(__dirname, '..', 'client', 'public', 'uploads')));
 
+
 // 파일 저장을 위한 설정
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -47,7 +48,12 @@ app.post('/upload', upload.single('file'), (req, res) => {
         const fileData = req.file;
         const jsonFilePath = path.join(__dirname, '..', 'client', 'data', 'data.json');
 
-        const imageUrl = `http://localhost:3000/uploads/${fileData.filename}`;
+        // 요청의 헤더에서 호스트 주소를 가져와 API URL 구성
+        const apiUrl = `http://${req.get('host')}`;
+        const imageUrl = `${apiUrl}/uploads/${fileData.filename}`;
+
+        // const imageUrl = `http://localhost:3000/uploads/${fileData.filename}`;
+        // const imageUrl = apiUrl + `/uploads/${fileData.filename}`;
         const fileInfo = {
             id: null,
             fieldname: fileData.fieldname,
@@ -292,3 +298,6 @@ app.post('/update-file-order', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+// app.listen(PORT, '0.0.0.0', () => {
+//     console.log(`Server is running on http://localhost:${PORT}`);
+// });

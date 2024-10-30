@@ -1,3 +1,7 @@
+:root {
+  --theme-border-color: #dfdfdf;
+}
+
 .settings-container {
   display: flex;
   flex-direction: row; /* 기본적으로 좌우 배치 */
@@ -5,14 +9,18 @@
 }
 
 .settings-sidebar {
-  width: 260px; /* 사이드바의 너비 */
+  /* width: 260px; 사이드바의 너비 */
   background-color: #fff;
-  border-right: 2px solid #dfdfdf;
+  /* border-right: 2px solid #dfdfdf; */
+  border-right: 2px solid var(--theme-lightyellow-color);
 }
 
 .settings-content {
   flex-grow: 1; /* 남은 공간을 차지 */
-  background-color: #fff;
+  background-color: #fff9ee;
+  padding: 1rem;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
@@ -22,16 +30,7 @@
   
   .settings-sidebar {
     width: 100%; /* 모바일에서는 전체 너비 차지 */
-    border-bottom: 2px solid #FC670C;
+    /* border-bottom: 2px solid #dfdfdf; */
+    border-bottom: 2px solid var(--theme-lightyellow-color);
   }
-}
-
-button.selected {
-  background-color: blue;
-  color: white;
-}
-
-button.unselected {
-  background-color: white;
-  color: blue;
 }

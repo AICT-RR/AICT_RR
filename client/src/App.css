@@ -1,3 +1,11 @@
+:root {
+  --theme-gold-color: #ffad0c;
+  --theme-lightyellow-color: #ffe7b2;
+  --theme-orange-color: #fc670c;
+  --theme-darkbrown-color: #351600;
+  --theme-lightgray-color: #dfdfdf;
+}
+
 .App {
   text-align: center;
 }

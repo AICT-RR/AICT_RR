@@ -3,11 +3,17 @@ import { DndContext } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
 import './FileUpload.css';
+import { ReactComponent as UploadIcon } from '../icons/fluent--arrow-upload-20-filled.svg';
+import { ReactComponent as InfoIcon } from '../icons/fluent--info-20-regular.svg';
+import { ReactComponent as NoFileIcon } from '../icons/fluent--document-split-hint-off-20-regular.svg';
 
 function FileUpload() {
   const [file, setFile] = useState(null);
   const [fileList, setFileList] = useState([]);
   const [isDragging, setIsDragging] = useState(false); // 드래그 상태 관리
+
+  // 현재 접속 중인 호스트 주소를 사용하여 API URL 구성
+  const apiUrl = `http://${window.location.hostname}:5000`;
 
   // 파일 목록 불러오기 (처음 페이지 로드될 때 한 번만 실행)
   useEffect(() => {
@@ -17,7 +23,8 @@ function FileUpload() {
   // 서버에서 파일 목록을 불러와 파일 리스트 상태 업데이트
   const fetchFiles = async () => {
     try {
-      const response = await fetch('http://localhost:5000/files');
+      // const response = await fetch('http://localhost:5000/files');
+      const response = await fetch(apiUrl + '/files');
       const files = await response.json();
       setFileList(files);
     } catch (error) {
@@ -44,7 +51,8 @@ function FileUpload() {
     formData.append('file', selectedFile); // 선택된 파일 추가
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      // const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch(apiUrl + '/upload', {
         method: 'POST',
         body: formData,
       });
@@ -65,7 +73,8 @@ function FileUpload() {
     if (window.confirm(`"${fileName}" 파일을 삭제하시겠습니까?`)) {
       try {
         const response = await fetch(
-          `http://localhost:5000/delete/${fileName}`,
+          // `http://localhost:5000/delete/${fileName}`,
+          apiUrl + `/delete/${fileName}`,
           {
             method: 'DELETE',
           }
@@ -95,7 +104,8 @@ function FileUpload() {
     console.log('정렬된 파일 목록:', newFileList);
 
     try {
-      const response = await fetch('http://localhost:5000/update-file-order', {
+      // const response = await fetch('http://localhost:5000/update-file-order', {
+      const response = await fetch(apiUrl + '/update-file-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,36 +132,57 @@ function FileUpload() {
 
   return (
     <div className='container'>
-      <div className='select'>
+      {/* 업로드 버튼 */}
+      <div className='upload-button-container'>
         <form encType='multipart/form-data'>
-          <label htmlFor='file' className='upload-label'>
-            <img src='/image/upload.png' alt='upload' width="28px"/>
-            <span style={{ color: 'white' }}>이미지 업로드</span>
+          <label htmlFor='file' className='upload-button'>
+            <UploadIcon />
+            <span>이미지 업로드</span>
           </label>
-          <input type='file' id='file' name='file' className='upload' onChange={handleFileChange}/>
+          <input
+            type='file'
+            id='file'
+            name='file'
+            className='upload'
+            onChange={handleFileChange}
+          />
         </form>
       </div>
 
-      <div className='description'>
-        <img src='/image/information.png' alt='info-img' className='info'/>이미지를 드래그해서 순서를 조정할 수 있어요
+      {/* 안내 문구 */}
+      <div className='desc-container'>
+        <InfoIcon className='info-icon' />
+        <p className='desc'>이미지를 드래그해서 순서를 조정할 수 있어요</p>
       </div>
 
-      <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEndWrapper}>
+      {/* 이미지 리스트 */}
+      <DndContext
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEndWrapper}
+      >
         {fileList.length > 0 ? (
           <SortableContext items={fileList}>
             <div className='card'>
-              {fileList.map((fileName, index) => (
+              {fileList.map((fileName, id) => (
                 <ImageItem
-                  key={index}
+                  key={fileName}
                   fileName={fileName}
                   onDelete={handleDelete}
                   isDragging={isDragging}
+                  sortId={id}
                 />
               ))}
             </div>
           </SortableContext>
         ) : (
-          <p>No images uploaded yet.</p>
+          <div className='card no-card'>
+            <NoFileIcon className='no-file-icon' />
+            <p style={{ textAlign: 'center' }}>
+              이미지가 아직 없어요
+              <br />
+              업로드 버튼을 눌러 추가해 보세요
+            </p>
+          </div>
         )}
       </DndContext>
     </div>
