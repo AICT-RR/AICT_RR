@@ -3,6 +3,8 @@ import { DndContext } from '@dnd-kit/core';
 import { SortableContext, arrayMove } from '@dnd-kit/sortable';
 import ImageItem from './ImageItem'; // Imageitem의 대문자를 수정
 import './FileUpload.css';
+import { ReactComponent as UploadIcon } from '../icons/fluent--arrow-upload-20-filled.svg';
+import { ReactComponent as InfoIcon } from '../icons/fluent--info-20-regular.svg';
 
 function FileUpload() {
   const [file, setFile] = useState(null);
@@ -133,7 +135,7 @@ function FileUpload() {
       <div className='upload-button-container'>
         <form encType='multipart/form-data'>
           <label htmlFor='file' className='upload-button'>
-            <img src='/image/upload.png' alt='upload' width="28px"/>
+            <UploadIcon />
             <span>이미지 업로드</span>
           </label>
           <input type='file' id='file' name='file' className='upload' onChange={handleFileChange}/>
@@ -141,8 +143,11 @@ function FileUpload() {
       </div>
 
       {/* 안내 문구 */}
-      <div className='description'>
-        <img src='/image/information.png' alt='info-img' className='info-icon'/>이미지를 드래그해서 순서를 조정할 수 있어요
+      <div className='desc-container'>
+        <InfoIcon className='info-icon' />
+        <p className='desc'>
+          이미지를 드래그해서 순서를 조정할 수 있어요
+        </p>
       </div>
 
       {/* 이미지 리스트 */}

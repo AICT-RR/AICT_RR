@@ -75,6 +75,11 @@ a {
 }
 
 @media (max-width: 768px) {
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: auto;
+  }
   li {
     /* width: 100%; */
     display: block;

@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  /* max-width: 100%; */
 }
 
 .upload-button-container {
@@ -45,21 +45,29 @@ body {
   height: 100%;
   border-radius: 1rem;
   border: 2px solid var(--theme-lightyellow-color);
+  margin-bottom: 8rem;
 }
 
-.description {
-  font-size: 1.2rem;
-  color: #FF9512;
-  /*margin: 15px 0;*/
-  text-align: center;
-  padding: 1rem;
+.desc-container {
+  color: var(--theme-orange-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0.8rem;
+  gap: 0.4rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  display: inline-block;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .info-icon {
-  width: 24px; 
-  height: 24px;
-  vertical-align: middle;
-  margin-right: 8px;
-  filter: invert(56%) sepia(90%) saturate(700%) hue-rotate(-10deg) brightness(100%) contrast(100%);
+  width: 1.3rem; 
+  height: 1.3rem;
 }
 
