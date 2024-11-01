@@ -4,16 +4,15 @@
   <img width="600" src="./mdimg/로고.png" alt="로고" >
 </p>
 
-
 라즈베리파이를 활용한 초경량 사이니지 시스템인 **babara**는 소상공인을 위해 간편하고 효율적인 디지털 광고를 제공합니다.
-
----
 
 <img width="800" src="./mdimg/슬라이드.gif" alt="화면" >
 
+---
+
 ## :mag: 기능 소개
 
-### :open_file_folder: 이미지 관리
+### :bookmark_tabs: 이미지 관리
 
 <p align="center">
 <img width="800" src="./mdimg/기능.gif" alt="기능" >
@@ -23,7 +22,7 @@
 - 드래그 앤 드롭으로 이미지 순서를 변경할 수 있습니다.
 - 불필요한 이미지는 삭제가 가능합니다.
 
-### :bookmark_tabs: 슬라이드 전환 시간 설정
+### :hourglass: 슬라이드 전환 시간 설정
 
 <p align="center">
 <img width="800" src="./mdimg/기능2.gif" alt="기능2" >
