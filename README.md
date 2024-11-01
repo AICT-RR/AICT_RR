@@ -1,7 +1,7 @@
 # 소상공인을 위한 디지털사이니지 솔루션 - **babara**
 
 <p align="center">
-  <img width="600" src="./mdimg/logo.png" alt="로고" >
+  <img width="600" src="./mdimg/로고.png" alt="로고" >
 </p>
 
 
@@ -31,14 +31,14 @@
 </p>
 
 - 슬라이드 전환 시간을 설정할 수 있으며, 기본 전환 시간은 15초입니다.
-- '+', '-' 버튼으로 전환 시간을 쉽게 조절할 수 있습니다.
+- `+`, `-` 버튼으로 전환 시간을 쉽게 조절할 수 있습니다.
 
 ---
 
 ## 사용된 오픈소스
 
-- 슬라이드 기능: [Swiper.js](https://swiperjs.com/)
-- 드래그 앤 드롭: [DND Kit](https://dndkit.com/)
+- 슬라이드 기능: ![(swiperjs.com's favicon)](https://www.google.com/s2/favicons?domain=https://swiperjs.com) [Swiper - The Most Modern Mobile Touch Slider](https://swiperjs.com/)
+- 드래그 앤 드롭: ![(dndkit.com's favicon)](https://www.google.com/s2/favicons?domain=https://dndkit.com) [dnd kit – a modern drag and drop toolkit for React](https://dndkit.com/)
 
 ---
 
