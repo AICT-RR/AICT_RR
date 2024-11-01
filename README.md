@@ -1,10 +1,12 @@
 # 소상공인을 위한 디지털사이니지 솔루션 - **babara**
 
+<img width="800" src="./mdimg/logo.png" alt="로고" >
+
 라즈베리파이를 활용한 초경량 사이니지 시스템인 **babara**는 소상공인을 위해 간편하고 효율적인 디지털 광고를 제공합니다.
 
 ---
 
-<img width="800" src="./mdimg/화면.gif" alt="화면" >
+<img width="800" src="./mdimg/슬라이드.gif" alt="화면" >
 
 ## 기능 소개
 
